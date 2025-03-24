@@ -42,7 +42,7 @@
 }
 
 .user-icon {
-    margin-right: -10px;
+    margin-right: -190px;
 }
 
 .user-icon img {
@@ -73,6 +73,117 @@
     transform: scale(1.1);
     opacity: 0.8;
 }
+
+/* login style */
+/* Profile Icon */
+.user-icon img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out;
+}
+.user-icon img:hover {
+    transform: scale(1.1);
+}
+
+/* Modal Customization */
+.modal-content {
+    border-radius: 10px;
+    overflow: hidden;
+    border: none;
+}
+
+/* Left Side - Login Form */
+.login-form {
+    width: 50%;
+    background: #91B7D1; /* Light blue-gray */
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logo {
+    width: 80px;
+}
+
+/* Input Fields */
+.input-style {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 12px;
+    font-size: 16px;
+    background: #FDF3BC; /* Light yellow */
+}
+
+/* Login Button */
+.login-btn {
+    background-color: black;
+    color: white;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: background 0.3s;
+}
+.login-btn:hover {
+    background-color: #333;
+}
+
+/* Forgot Password Link */
+.forgot-link {
+    color: #004080;
+    text-decoration: none;
+    font-size: 14px;
+}
+.forgot-link:hover {
+    text-decoration: underline;
+}
+
+/* Right Side - Social Login */
+/* Right Side - Social Login */
+.social-login {
+    width: 50%;
+    background: #004080; /* Dark blue */
+    color: white;
+    text-align: center;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Centers horizontally */
+}
+
+/* Social Buttons */
+.social-btn {
+    width: 80%;
+    max-width: 250px; /* Ensures buttons are not too wide */
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 16px;
+    background: white;
+    border: none;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centers text inside button */
+    text-align: center;
+}
+.social-btn img {
+    width: 20px;
+    margin-right: 10px;
+}
+
+/* Individual Button Colors */
+.google {
+    color: black;
+}
+.facebook {
+    color: #1877f2;
+}
+.microsoft {
+    color: #0078d4;
+}
+
 
 
 
@@ -153,8 +264,7 @@
 
 .gensys-image {
     width: 100%;
-    max-width: 500px;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.582);
+    box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.582);
 }
 
 @media (max-width: 991px) {
@@ -210,6 +320,43 @@
 
 
 /* section ng 4 containers */
+.section-header {
+    font-size: 36px;
+    font-weight: 700;
+    color: #004080;
+    text-align: center;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+.section-subtext {
+    font-size: 18px;
+    color: #555;
+    text-align: center;
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+    font-style: italic;
+    opacity: 0.85;
+}
+.section-header::after {
+    content: "";
+    width: 300px;
+    height: 4px;
+    background: #91B7D1;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+
 .gensys-initiatives {
     background: linear-gradient(to bottom, #FAF7E5 0%, #91B7D1 100%);
     padding: 80px 0;
@@ -269,8 +416,8 @@
     display: block;
     width: 100%;
     padding: 10px;
-    background: linear-gradient(to right, #E3E3A5, #A8A878);
-    color: black;
+    background-color: #FAF7E5;
+    color: rgb(0, 0, 0);
     font-size: 14px;
     font-weight: bold;
     text-align: center;
@@ -278,9 +425,7 @@
     cursor: pointer;
 }
 
-.explore-btn:hover {
-    background: linear-gradient(to right, #D3D390, #8A8A60);
-}
+
 
 
 

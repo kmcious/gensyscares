@@ -36,7 +36,10 @@
 
 <section class="gensys-initiatives">
     <div class="container">
-    <br><br><br><br>
+        <br><br>
+    <h2 class="section-header">Join Our Gensys Community Initiatives</h2>
+            <p class="section-subtext">Be part of meaningful projects that create positive change.</p>
+
         <div class="row justify-content-center">
             <!-- Initiative Cards -->
             <div class="col-md-6 col-lg-3">
@@ -44,7 +47,7 @@
                     <div class="initiative-image">
                         <img src="images/homepage pics/explore1.png" alt="Gensys Cares">
                     </div>                
-                    <button class="explore-btn">Explore</button>
+                    <button class="explore-btn">EXPLORE</button>
                 </div>
             </div>
 
@@ -53,7 +56,7 @@
                     <div class="initiative-image">
                         <img src="images/homepage pics/explore2.png" alt="Blood Donation">
                     </div>
-                    <button class="explore-btn">Explore</button>
+                    <button class="explore-btn">EXPLORE</button>
                 </div>
             </div>
 
@@ -62,7 +65,7 @@
                     <div class="initiative-image">
                         <img src="images/homepage pics/explore3.png" alt="100 Scholars Program">
                     </div>
-                    <button class="explore-btn">Explore</button>
+                    <button class="explore-btn">EXPLORE</button>
                 </div>
             </div>
 
@@ -71,7 +74,7 @@
                     <div class="initiative-image">
                         <img src="images/homepage pics/explore4.png" alt="Coastal Cleanup Drive">
                     </div>
-                    <button class="explore-btn">Explore</button>
+                    <button class="explore-btn">EXPLORE</button>
                 </div>
             </div>
         </div>
