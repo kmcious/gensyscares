@@ -6,7 +6,6 @@
     font-family: 'Inter', sans-serif !important;
 }
 
-/* Navbar Styling */
 .custom-navbar {
     background-color: #155E95;
     padding: 15px 40px;
@@ -15,7 +14,6 @@
     justify-content: space-between;
 }
 
-/* Logo Styling */
 .logo-container {
     display: flex;
     align-items: center;
@@ -29,7 +27,6 @@
     margin-right: 25px; 
 }
 
-/* Navbar Links */
 .navbar-nav {
     flex-grow: 1;
     justify-content: flex-start;
@@ -44,9 +41,6 @@
     transition: color 0.3s ease;
 }
 
-
-
-/* User Icon */
 .user-icon {
     margin-right: -10px;
 }
@@ -57,7 +51,6 @@
     transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Mobile Responsive */
 @media (max-width: 991px) {
     .custom-navbar {
         padding: 10px 20px;
@@ -75,11 +68,12 @@
         display: none;
     }
 }
+
 .user-icon a:hover img {
     transform: scale(1.1);
     opacity: 0.8;
-   
 }
+
 
 
 
@@ -91,33 +85,29 @@
     padding: 100px 0; 
 }
 
-/* Title Styling */
 .gensys-title {
     font-family: 'Inter', sans-serif !important;
-    font-size: 2rem; /* Responsive font size */
+    font-size: 2rem; 
     font-weight: 800;
     color: #FBF3B9;
     line-height: 1.6;
-    max-width: 85%; /* Adjusted for better centering */
+    max-width: 85%; 
     margin: 0 auto; 
     text-align: center; 
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Slight glow effect for better readability */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); 
 }
 
-
-/* Subtitle Styling */
 .gensys-subtext {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', sans-serif !important;
     font-size: 16px; 
-    color: #ffffff;
-    opacity: 1; /* Ensure full visibility */
+    color: #FBF3B9;
+    opacity: 1; 
     max-width: 85%;
     margin: 30px auto;
     text-align: center;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Slight glow effect for better readability */
+    text-shadow: 1px 1px 3px rgb(0, 0, 0); 
 }
 
-/* Search Container */
 .search-container {
     display: flex;
     align-items: center;
@@ -153,7 +143,6 @@
     background-color: #234b6b;
 }
 
-/* Image Section */
 .gensys-image-container {
     position: relative;
     display: flex;
@@ -163,12 +152,11 @@
 }
 
 .gensys-image {
-    width: 100%; /* Reduced to maintain proportions */
+    width: 100%;
     max-width: 500px;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.582);
 }
 
-/* Responsive Adjustments */
 @media (max-width: 991px) {
     .gensys-title {
         font-size: 1.8rem;
@@ -220,97 +208,78 @@
 
 
 
+
 /* section ng 4 containers */
 .gensys-initiatives {
     background: linear-gradient(to bottom, #FAF7E5 0%, #91B7D1 100%);
     padding: 80px 0;
     text-align: center;
 }
-
-.section-title {
-    font-size: 32px;
-    font-weight: bold;
-    margin-bottom: 40px;
-    color: #0047AB;
-}
-
-.initiative-card {
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: center;
-    padding: 20px;
-    height: 100%;
+.initiative-container {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px; /* Adds space between cards */
 }
 
-.initiative-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
-}
+
 
 .initiative-image {
+    position: relative;
     width: 100%;
-    height: 200px;
-    overflow: hidden;
+    height: 400px; /* Increased from 180px */
 }
 
 .initiative-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 15px 15px 0 0;
 }
 
-.initiative-content {
-    padding: 20px;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: center;
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Dark overlay */
 }
 
-.initiative-content h3 {
-    font-size: 20px;
-    color: #0047AB;
-    margin-bottom: 10px;
+.gold-lines::before,
+.gold-lines::after {
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 2px;
+    background: gold;
 }
 
-.initiative-content p {
-    font-size: 14px;
-    color: #555;
-    margin-bottom: 15px;
+.gold-lines::before {
+    top: 15px;
+    left: 15px;
 }
+
+.gold-lines::after {
+    bottom: 15px;
+    right: 15px;
+}
+
 
 .explore-btn {
-    background: #0047AB;
-    color: white;
-    border: none;
-    padding: 10px 20px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(to right, #E3E3A5, #A8A878);
+    color: black;
     font-size: 14px;
     font-weight: bold;
-    border-radius: 25px;
+    text-align: center;
+    border: none;
     cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: auto;
-    align-self: center;
 }
 
 .explore-btn:hover {
-    background: #003080;
-}
-
-@media (max-width: 992px) {
-    .initiative-card {
-        max-width: 90%;
-        margin: auto;
-    }
+    background: linear-gradient(to right, #D3D390, #8A8A60);
 }
 
 
@@ -318,18 +287,15 @@
 
 
 /* feature section */
-
-/* Full-Screen Centered Background with Gradient */
 .feature-section {
     background: linear-gradient(to bottom, #91B7D1 0%, #FAF7E5 100%);
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Full viewport height */
+    height: 100vh;
     width: 100%;
 }
 
-/* Container for Centering */
 .feature-container {
     display: flex;
     align-items: center;
@@ -340,40 +306,37 @@
     gap: 50px;
 }
 
-/* Image Styling */
 .feature-image img {
-    width: 350px; /* Increased size */
+    width: 350px;
     height: auto;
     border-radius: 20px;
     box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Content Styling */
 .feature-content {
-    color: #00254D; /* Dark blue text for contrast */
+    color: #00254D;
     max-width: 700px;
-    text-align: justify; /* Justify text */
+    text-align: justify;
 }
 
 .feature-content h2 {
-    font-size: 36px; /* Increased font size */
+    font-size: 36px;
     font-weight: bold;
     color: #00254D;
     margin-bottom: 15px;
-    text-align: justify; /* Keep heading justified */
+    text-align: justify;
 }
 
 .feature-content p {
-    font-size: 20px; /* Increased font size */
+    font-size: 20px;
     line-height: 1.8;
     margin-bottom: 20px;
-    text-align: justify; /* Justify paragraph text */
+    text-align: justify;
 }
 
-/* Button Styling */
 .see-more-btn {
     display: inline-block;
-    padding: 14px 28px; /* Larger button */
+    padding: 14px 28px;
     background-color: #00254D;
     color: #FAF7E5;
     font-size: 20px;
@@ -381,7 +344,7 @@
     text-decoration: none;
     border-radius: 25px;
     transition: background-color 0.3s ease-in-out;
-    text-align: center; /* Center button */
+    text-align: center;
 }
 
 .see-more-btn:hover {
@@ -389,7 +352,6 @@
     color: #00254D;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .feature-container {
         flex-direction: column;
@@ -397,7 +359,7 @@
     }
 
     .feature-image img {
-        width: 280px; /* Adjust for mobile */
+        width: 280px;
     }
 
     .feature-content h2 {
@@ -406,7 +368,7 @@
 
     .feature-content p {
         font-size: 18px;
-        text-align: justify; /* Ensure justification on mobile */
+        text-align: justify;
     }
 
     .see-more-btn {
@@ -414,6 +376,9 @@
         padding: 12px 24px;
     }
 }
+
+
+
 
 
 

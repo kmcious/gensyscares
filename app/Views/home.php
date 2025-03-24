@@ -41,11 +41,16 @@
             <div class="col-md-6 col-lg-3">
                 <div class="initiative-card">
                     <div class="initiative-image">
-                        <img src="images/homepage pics/hp1.png" alt="Gensys Cares">
-                    </div>
-                    <div class="initiative-content">
-                        <h3>Gensys Cares</h3>
-                        <p>Empowering communities with support and resources.</p>
+                        <img src="images/homepage pics/explore1.png" alt="Gensys Cares">
+                    </div>                
+                    <button class="explore-btn">Explore</button>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="initiative-card">
+                    <div class="initiative-image">
+                        <img src="images/homepage pics/explore2.png" alt="Blood Donation">
                     </div>
                     <button class="explore-btn">Explore</button>
                 </div>
@@ -54,11 +59,7 @@
             <div class="col-md-6 col-lg-3">
                 <div class="initiative-card">
                     <div class="initiative-image">
-                        <img src="images/homepage pics/hp1.png" alt="Blood Donation">
-                    </div>
-                    <div class="initiative-content">
-                        <h3>Blood Donation</h3>
-                        <p>Saving lives, one donation at a time.</p>
+                        <img src="images/homepage pics/explore3.png" alt="100 Scholars Program">
                     </div>
                     <button class="explore-btn">Explore</button>
                 </div>
@@ -67,24 +68,7 @@
             <div class="col-md-6 col-lg-3">
                 <div class="initiative-card">
                     <div class="initiative-image">
-                        <img src="images/homepage pics/hp1.png" alt="100 Scholars Program">
-                    </div>
-                    <div class="initiative-content">
-                        <h3>100 Scholars Program</h3>
-                        <p>Providing education for a brighter future.</p>
-                    </div>
-                    <button class="explore-btn">Explore</button>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-3">
-                <div class="initiative-card">
-                    <div class="initiative-image">
-                        <img src="images/homepage pics/hp1.png" alt="Coastal Cleanup Drive">
-                    </div>
-                    <div class="initiative-content">
-                        <h3>Coastal Cleanup Drive</h3>
-                        <p>Protecting marine life and preserving nature.</p>
+                        <img src="images/homepage pics/explore4.png" alt="Coastal Cleanup Drive">
                     </div>
                     <button class="explore-btn">Explore</button>
                 </div>
