@@ -12,7 +12,7 @@
         </a>
 
         <!-- Center: Navbar Links -->
-        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+<div class="collapse navbar-collapse justify-content-center" id="navbarNav">
     <ul class="navbar-nav">
         <li class="nav-item"><a class="nav-link active" href="<?= site_url('/') ?>">HOME</a></li>
         <li class="nav-item"><a class="nav-link" href="<?= site_url('announcement') ?>">ANNOUNCEMENT</a></li>
