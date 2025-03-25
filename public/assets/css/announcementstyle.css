@@ -80,6 +80,115 @@
     opacity: 0.8;
    
 }
+/* login style */
+/* Profile Icon */
+.user-icon img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out;
+}
+.user-icon img:hover {
+    transform: scale(1.1);
+}
+
+/* Modal Customization */
+.modal-content {
+    border-radius: 10px;
+    overflow: hidden;
+    border: none;
+}
+
+/* Left Side - Login Form */
+.login-form {
+    width: 50%;
+    background: #91B7D1; /* Light blue-gray */
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logo {
+    width: 80px;
+}
+
+/* Input Fields */
+.input-style {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 12px;
+    font-size: 16px;
+    background: #FDF3BC; /* Light yellow */
+}
+
+/* Login Button */
+.login-btn {
+    background-color: black;
+    color: white;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: background 0.3s;
+}
+.login-btn:hover {
+    background-color: #333;
+}
+
+/* Forgot Password Link */
+.forgot-link {
+    color: #004080;
+    text-decoration: none;
+    font-size: 14px;
+}
+.forgot-link:hover {
+    text-decoration: underline;
+}
+
+/* Right Side - Social Login */
+/* Right Side - Social Login */
+.social-login {
+    width: 50%;
+    background: #004080; /* Dark blue */
+    color: white;
+    text-align: center;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Centers horizontally */
+}
+
+/* Social Buttons */
+.social-btn {
+    width: 80%;
+    max-width: 250px; /* Ensures buttons are not too wide */
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 16px;
+    background: white;
+    border: none;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centers text inside button */
+    text-align: center;
+}
+.social-btn img {
+    width: 20px;
+    margin-right: 10px;
+}
+
+/* Individual Button Colors */
+.google {
+    color: black;
+}
+.facebook {
+    color: #1877f2;
+}
+.microsoft {
+    color: #0078d4;
+}
 
 
 
