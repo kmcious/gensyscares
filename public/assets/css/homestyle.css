@@ -27,6 +27,7 @@
     margin-right: 25px; 
 }
 
+
 .navbar-nav {
     flex-grow: 1;
     justify-content: flex-start;
@@ -185,6 +186,32 @@
 }
 
 
+/* register style */
+
+/* Modal Customization */
+
+.logo2 {
+    width: 80px;
+}
+.register-form {
+    width: 100%;
+    background: #91B7D1; /* Light blue-gray */
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.register-btn {
+    background-color: black;
+    color: white;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: background 0.3s;
+}
+.register-btn:hover {
+    background-color: #333;
+}
 
 
 

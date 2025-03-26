@@ -57,10 +57,14 @@
                         </div>
                         <div class="d-grid">
                             <button type="submit" class="btn login-btn">Login</button>
-                        </div>
+                        </div>'
+                        <p class="text-center mt-3">Don't have an account? <a href="#" data-bs-toggle="modal" data-bs-target="#registerModal" data-bs-dismiss="modal">Register</a></p>
                         <p class="text-center mt-3"><a href="#">Terms of Service</a></p>
                     </form>
                 </div>
+             
+                
+
 
                 <!-- Right Side: Social Login -->
                 <div class="social-login">
@@ -73,6 +77,105 @@
         </div>
     </div>
 </div>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    document.querySelector("#loginModal form").addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        let formData = new FormData(this);
+
+        fetch("<?= base_url('auth/login'); ?>", {
+            method: "POST",
+            headers: { "X-Requested-With": "XMLHttpRequest" },
+            body: formData,
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === "success") {
+                window.location.href = data.redirect;
+            } else {
+                alert("Error: " + data.message);
+            }
+        })
+        .catch(error => console.error("Fetch Error:", error));
+    });
+});
+</script>
+
+
+
+
+
+<!--register modal-->
+<!-- Register Modal -->
+<div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-body d-flex justify-content-center p-0">
+                <div class="register-form p-4">
+                    <div class="text-center mb-3">
+                        <img src="<?= base_url('images/logo/logo1.png'); ?>" alt="Logo" class="logo">
+                    </div>
+                    <form id="registerForm" action="<?= base_url('auth/register'); ?>" method="POST">
+                        <?= csrf_field(); ?>
+                        <div class="mb-3">
+                            <label for="registerName" class="form-label">Full Name</label>
+                            <input type="text" name="name" id="registerName" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="registerEmail" class="form-label">Email</label>
+                            <input type="email" name="email" id="registerEmail" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="registerPassword" class="form-label">Password</label>
+                            <input type="password" name="password" id="registerPassword" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="confirmPassword" class="form-label">Confirm Password</label>
+                            <input type="password" name="confirm_password" id="confirmPassword" class="form-control" required>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">Register</button>
+                        </div>
+                    </form>
+                    <p class="text-center mt-3">Already have an account? <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelector("#registerForm").addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent default form submission
+
+        let formData = new FormData(this);
+
+        console.log("Submitting form..."); // Debugging
+
+        fetch(this.action, {
+            method: "POST",
+            headers: {
+                "X-Requested-With": "XMLHttpRequest" // Ensure CI treats it as an AJAX request
+            },
+            body: formData,
+        })
+        .then(response => response.json()) // Expect JSON response
+        .then(data => {
+            console.log("Response:", data);
+            if (data.status === "success") {
+                alert("Registration successful!");
+                window.location.reload();
+            } else {
+                alert("Error: " + JSON.stringify(data.message)); // Convert object to string
+            }
+        })
+        .catch(error => console.error("Fetch Error:", error));
+    });
+});
+
+</script>
 
         <!-- Mobile Menu Button -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
