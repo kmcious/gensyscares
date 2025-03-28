@@ -213,6 +213,16 @@
     background-color: #333;
 }
 
+.navbar-nav .nav-link {
+    color: #00254D; /* Default color */
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link.active {
+    color: #FBF3B9 !important; /* Highlight active page */
+}
+
 
 
 

@@ -13,14 +13,28 @@
         </a>
 
         <!-- Center: Navbar Links -->
+        <?php 
+$request = service('request'); 
+$segment = $request->getUri()->getSegment(1);
+?>
+
 <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
     <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link active" href="<?= site_url('/') ?>">HOME</a></li>
-        <li class="nav-item"><a class="nav-link" href="<?= site_url('announcement') ?>">ANNOUNCEMENT</a></li>
-        <li class="nav-item"><a class="nav-link" href="<?= site_url('about') ?>">ABOUT US</a></li>
-        <li class="nav-item"><a class="nav-link" href="<?= site_url('contact') ?>">CONTACT</a></li>
+        <li class="nav-item">
+            <a class="nav-link <?= ($segment == '') ? 'active' : '' ?>" href="<?= site_url('/') ?>">HOME</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link <?= ($segment == 'announcement') ? 'active' : '' ?>" href="<?= site_url('announcement') ?>">ANNOUNCEMENT</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link <?= ($segment == 'about') ? 'active' : '' ?>" href="<?= site_url('about') ?>">ABOUT US</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link <?= ($segment == 'contact') ? 'active' : '' ?>" href="<?= site_url('contact') ?>">CONTACT</a>
+        </li>
     </ul>
 </div>
+
 
         <!-- Profile Icon -->
 <div class="user-icon">
