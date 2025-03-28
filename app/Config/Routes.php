@@ -24,3 +24,8 @@ $routes->get('/user/dashboard', 'DashboardController::userDashboard');
 
 //logout
 $routes->get('/auth/logout', 'Auth::logout');
+
+
+//announcement routes display
+$routes->get('/pages/announcements', 'AnnouncementController::index');
+
