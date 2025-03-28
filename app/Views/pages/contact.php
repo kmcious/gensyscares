@@ -14,16 +14,6 @@
                     </iframe>
                     <p class="map-text">📍 Plazuela De Molino, Bacoor, Cavite</p>
                 </div>
-
-                <!-- Social Media Links -->
-                <div class="social-links">
-                    <a href="https://t.me/yourusername" target="_blank"><img src="<?= base_url('images/logo/telegram.svg'); ?>" alt="Telegram"></a>
-                    <a href="https://www.youtube.com/yourchannel" target="_blank"><img src="<?= base_url('images/logo/youtube.svg'); ?>" alt="YouTube"></a>
-                    <a href="https://www.facebook.com/yourpage" target="_blank"><img src="<?= base_url('images/logo/fb.svg'); ?>" alt="Facebook"></a>
-                    <a href="https://twitter.com/yourhandle" target="_blank"><img src="<?= base_url('images/logo/X.svg'); ?>" alt="Twitter"></a>
-                    <a href="https://www.instagram.com/yourhandle" target="_blank"><img src="<?= base_url('images/logo/insta.svg'); ?>" alt="Instagram"></a>
-                    <a href="https://www.linkedin.com/in/yourprofile" target="_blank"><img src="<?= base_url('images/logo/in.svg'); ?>" alt="LinkedIn"></a>
-                </div>
             </div>
 
             <!-- Right Side: Contact Form -->

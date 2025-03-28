@@ -1,6 +1,6 @@
 /* Global Contact Section Styling */
 .contact-section {
-    background: linear-gradient(to bottom, #e6f2ff, #ffefdb);
+    background: linear-gradient(to bottom, #FAF7E5 0%, #91B7D1 90%);
     padding: 60px 0;
     min-height: 100vh;
     display: flex;
@@ -32,47 +32,34 @@
 /* Map Styling */
 .map-container iframe {
     width: 100%;
-    height: 300px;
-    border-radius: 10px;
+    height:550px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+
 }
 
-/* Social Media Links */
-.social-links {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 20px;
-}
 
-.social-links a img {
-    width: 40px;
-    height: 40px;
-    transition: transform 0.3s ease-in-out;
-}
-
-.social-links a:hover img {
-    transform: scale(1.1);
-}
 
 /* Right Side (Form) */
 .right-side {
     flex: 1;
     min-width: 350px;
     background: white;
-    padding: 30px;
+    padding: 35px;
     border-radius: 12px;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15);
 }
 
 .right-side h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #333;
 }
 
 .right-side p {
-    font-size: 14px;
-    color: #555;
-    margin-bottom: 20px;
+    font-size: 15px;
+    color: #666;
+    margin-bottom: 25px;
 }
 
 /* Form Styling */
@@ -80,51 +67,64 @@
     display: flex;
     align-items: center;
     background: #f1f1f1;
-    border-radius: 8px;
-    padding: 10px;
+    border-radius: 10px;
+    padding: 12px;
     margin-bottom: 15px;
+    transition: background 0.3s ease;
+}
+
+.input-group:hover {
+    background: #e9e9e9;
 }
 
 .input-group span {
-    margin-right: 10px;
+    margin-right: 12px;
     font-size: 18px;
     color: #777;
 }
 
-.input-group input {
+.input-group input, 
+textarea {
     width: 100%;
     border: none;
     background: none;
     outline: none;
     font-size: 16px;
+    padding: 8px;
+    color: #333;
 }
 
 textarea {
-    width: 100%;
-    height: 120px;
-    border-radius: 8px;
-    border: none;
-    padding: 10px;
-    font-size: 16px;
+    height: 130px;
+    border-radius: 10px;
     background: #f1f1f1;
+    transition: background 0.3s ease;
 }
 
+textarea:hover {
+    background: #e9e9e9;
+}
+
+/* Send Button */
 .send-button {
-    background: #007bff;
-    color: white;
+    background: #FBF3B9;
+    color: rgb(0, 0, 0);
     font-size: 18px;
+    font-weight: bold;
     border: none;
-    padding: 12px;
-    border-radius: 8px;
+    padding: 14px;
+    border-radius: 10px;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: all 0.3s ease;
     width: 100%;
     display: block;
     text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .send-button:hover {
-    background: #0056b3;
+    background: #FBF3B9;
+    
 }
 
 /* Responsive */
@@ -134,11 +134,7 @@ textarea {
         align-items: center;
     }
 
-    .right-side {
-        width: 100%;
-    }
-
-    .left-side {
+    .right-side, .left-side {
         width: 100%;
     }
 }
