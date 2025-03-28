@@ -7,7 +7,7 @@
 }
 
 .custom-navbar {
-    background-color: #155E95;
+    background: linear-gradient(to bottom, #91B7D1 100%, #FAF7E5 0%); 
     padding: 15px 40px;
     display: flex;
     align-items: center;

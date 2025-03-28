@@ -5,47 +5,6 @@
 <?= view('layout/header', ['title' => 'Home']) ?> 
 <link rel="icon" type="image/png" href="<?= base_url('/images/logo/logo1.png'); ?>">
 
-<!-- Loader (Excludes Navbar) -->
-<div id="loader">
-    <img src="<?= base_url('/images/logo/bouncing-circles.svg'); ?>" alt="Loading..." class="svg-loader">
-</div>
-
-<style>
-    /* Loader */
-    #loader {
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(to bottom, #FAF7E5 0%, #91B7D1 90%);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 9999;
-    }
-
-    .svg-loader {
-        width: 80px;
-        height: auto;
-    }
-
-    /* Ensure Content Excludes Navbar */
-    #page-content {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    }
-</style>
-
-<!-- JavaScript to Hide Loader -->
-<script>
-    window.addEventListener("load", function() {
-        setTimeout(() => {
-            document.getElementById("loader").style.display = "none";
-            document.getElementById("page-content").style.opacity = "1";
-            document.getElementById("page-content").style.transform = "translateY(0)";
-        }, 1200);
-    });
-</script>
 
 <!-- Page Content (Excluding Navbar) -->
 <div id="page-content">
