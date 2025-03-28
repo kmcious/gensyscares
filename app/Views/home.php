@@ -9,7 +9,7 @@
             <!-- Left Side: Text Content -->
             <div class="col-lg-6 col-md-12 text-center text-lg-start">
                 <h1 class="gensys-title">
-                    “ <span class="highlight">EMPOWERING LIVES TO GROW AND TRANSFORM, CREATING A FUTURE OF POSSIBILITIES</span> ”
+                    “ <span class="highlight">EMPOWERING LIVE TO GROW AND TRANSFORM, CREATING A FUTURE OF POSSIBILITIES</span> ”
                 </h1>
                 <p class="gensys-subtext">
                     Children who are in Grade School, High School, Senior High, or College <br>
