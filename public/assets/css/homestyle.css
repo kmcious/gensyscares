@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
 * {
-    font-family: 'Inter', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
 }
 
 .custom-navbar {
@@ -219,16 +219,15 @@
 
 
 
-
 /* HOMEPAGE SECTION STYLES */
 
 .gensys-section {
-    background: linear-gradient(to bottom, #91B7D1 0%, #FAF7E5 100%); 
+    background: linear-gradient(to bottom, #91B7D1 50%, #FAF7E5 100%); 
     padding: 100px 0; 
 }
 
 .gensys-title {
-    font-family: 'Inter', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
     font-size: 2rem; 
     font-weight: 800;
     color: #FBF3B9;
@@ -240,8 +239,8 @@
 }
 
 .gensys-subtext {
-    font-family: 'Inter', sans-serif !important;
-    font-size: 16px; 
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 15px; 
     color: #FBF3B9;
     opacity: 1; 
     max-width: 85%;
@@ -394,7 +393,7 @@
 
 
 .gensys-initiatives {
-    background: linear-gradient(to bottom, #FAF7E5 0%, #91B7D1 100%);
+    background: linear-gradient(to bottom, #91B7D1 0%, #FAF7E5 0%); 
     padding: 80px 0;
     text-align: center;
 }
@@ -478,7 +477,7 @@
 
 /* feature section */
 .feature-section {
-    background: linear-gradient(to bottom, #91B7D1 0%, #FAF7E5 100%);
+    background: linear-gradient(to bottom, #FAF7E5 0%, #91B7D1 100%);
     display: flex;
     justify-content: center;
     align-items: center;

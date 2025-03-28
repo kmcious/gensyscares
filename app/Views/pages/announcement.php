@@ -45,7 +45,7 @@
 <style>
     body {
     background: linear-gradient(to bottom, #FAF7E5 0%, #91B7D1 80%); 
-    font-family: 'Inter', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
 }
 </style>
 
