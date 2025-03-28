@@ -33,14 +33,12 @@
                     <textarea name="message" placeholder="Your Message"></textarea>
                     <button type="submit" class="send-button">Send Message</button>
                 </form>
-                
-                
+    
             </div>
         </div>
     </div>
 </section>
 
-<br><br><br><br><br><br><br><br>
 
 <link rel="stylesheet" href="/assets/css/footerstyle.css">
 <?= view('layout/footer') ?>

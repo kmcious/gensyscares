@@ -1,7 +1,9 @@
 /* General Styles */
 .contact-section {
-    background: #e6f2ff;
-    padding: 50px 0;
+    background: linear-gradient(to bottom, #FAF7E5 0%, #91B7D1 100%);     padding: 50px 0;
+    min-height: 100vh; /* Ensures full height coverage */
+    display: flex;
+    align-items: center;
 }
 
 .container {
