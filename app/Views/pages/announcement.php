@@ -1,4 +1,4 @@
-
+<link rel="icon" type="image/png" href="<?= base_url('/images/logo/logo1.png'); ?>">
 <?= view('layout/header', ['title' => 'Announcement']) ?>
 <link rel="stylesheet" href="/assets/css/announcementstyle.css">
 <!-- Loader -->

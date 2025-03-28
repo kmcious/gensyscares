@@ -249,40 +249,63 @@
     text-shadow: 1px 1px 3px rgb(0, 0, 0); 
 }
 
+/* Modern Search Box (Sharp Corners) */
 .search-container {
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin-top: 30px;
-    max-width: 500px; 
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 400px;
+    margin: auto;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+  
 }
 
 .search-box {
     flex: 1;
-    padding: 14px;
-    font-size: 16px;
-    border-radius: 10px 0 0 10px;
+    padding: 14px 18px;
     border: none;
     outline: none;
-    width: 100%;
+    font-size: 16px;
+    color: #333;
+    background: transparent;
 }
 
+.search-box::placeholder {
+    color: #999;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+
+
 .search-button {
-    background-color: #2e5e87;
+    background: #155E95;
     color: white;
     border: none;
-    padding: 14px 20px;
-    border-radius: 0 10px 10px 0;
+    padding: 14px 18px;
     cursor: pointer;
-    font-size: 16px;
-    transition: background 0.3s ease;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.search-button i {
+    font-size: 20px;
+    transition: transform 0.2s ease-in-out;
 }
 
 .search-button:hover {
-    background-color: #234b6b;
+    background: #003366;
+    transform: scale(1.05);
 }
+
+.search-button:active {
+    transform: scale(0.95);
+}
+
 
 .gensys-image-container {
     position: relative;
@@ -451,8 +474,8 @@
     display: block;
     width: 100%;
     padding: 10px;
-    background-color: #FAF7E5;
-    color: rgb(0, 0, 0);
+    background-color: #155E95;
+    color: rgb(255, 255, 255);
     font-size: 14px;
     font-weight: bold;
     text-align: center;
@@ -477,7 +500,7 @@
 
 /* feature section */
 .feature-section {
-    background: linear-gradient(to bottom, #FAF7E5 0%, #91B7D1 100%);
+    background: linear-gradient(to bottom, #FAF7E5 100%, #91B7D1 80%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -496,16 +519,18 @@
 }
 
 .feature-image img {
-    width: 350px;
+    width: 500px; /* Increased size */
     height: auto;
     border-radius: 20px;
-    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.4); /* Enhanced shadow */
 }
 
+
 .feature-content {
-    color: #00254D;
-    max-width: 700px;
-    text-align: justify;
+    display: flex;
+    justify-content: justify;
+    gap: 10px; /* Reduce the gap */
+    flex-wrap: wrap; /* Ensures text moves to the next line if needed */
 }
 
 .feature-content h2 {
@@ -540,6 +565,80 @@
     background-color: #FAF7E5;
     color: #00254D;
 }
+/* Feature Section Background */
+.feature-section2 {
+    background: linear-gradient(to bottom, #FAF7E5 0%, #91B7D1 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    padding-top: 20px; /* Adjust this value to move up */
+    margin-top: -120px; /* Moves the entire section up */
+}
+
+/* Flexbox Container */
+.feature-container2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1400px;
+    width: 100%;
+    padding: 30px;
+    gap: 50px;
+}
+
+/* Feature Image - Right Side */
+.feature-image2 img {
+    width: 500px; /* Increased size */
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.4); /* Enhanced shadow */
+}
+
+/* Feature Content - Left Side */
+.feature-content2 {
+    display: flex;
+    justify-content: justify;
+    gap: 10px; /* Reduce the gap */
+    flex-wrap: wrap; /* Ensures text moves to the next line if needed */
+}
+
+.feature-content2 h2 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #00254D;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.feature-content2 p {
+    font-size: 20px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+/* Button Styling */
+.see-more-btn2 {
+    display: inline-block;
+    padding: 14px 28px;
+    background-color: #00254D;
+    color: #FAF7E5;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background-color 0.3s ease-in-out;
+    text-align: center;
+}
+
+.see-more-btn2:hover {
+    background-color: #FAF7E5;
+    color: #00254D;
+}
+
+
 
 @media (max-width: 768px) {
     .feature-container {

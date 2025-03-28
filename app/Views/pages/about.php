@@ -1,6 +1,6 @@
 <?= view('layout/header', ['title' => 'About Us']) ?>  
 <link rel="stylesheet" href="<?= base_url('/assets/css/about.css'); ?>">
-
+<link rel="icon" type="image/png" href="<?= base_url('/images/logo/logo1.png'); ?>">
 <!-- Loader -->
 <div id="loader">
     <img src="<?= base_url('/images/logo/bouncing-circles.svg'); ?>" alt="Loading..." class="svg-loader">
@@ -10,7 +10,7 @@
 <div id="content">
     <section class="mission-section">
         <div class="image-stack">
-            <img src="images/homepage pics/hp1.png" alt="Student">
+            <img src="images/homepage pics/hp5.png" alt="Student">
         </div>
         <div class="mission-text">
             <h2>MISSION</h2>
@@ -22,7 +22,7 @@
 
     <section class="vision-section">
         <div class="image-stack">
-            <img src="images/homepage pics/hp1.png" alt="Student">
+            <img src="images/homepage pics/hp6.png" alt="Student">
         </div>
         <div class="vision-text">
             <h2>VISION</h2>

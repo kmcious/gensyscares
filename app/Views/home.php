@@ -3,6 +3,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <?= view('layout/header', ['title' => 'Home']) ?> 
+<link rel="icon" type="image/png" href="<?= base_url('/images/logo/logo1.png'); ?>">
 
 <!-- Loader (Excludes Navbar) -->
 <div id="loader">
@@ -137,13 +138,29 @@
                 <img src="images/homepage pics/hp2.png" alt="Feature Image">
             </div>
             <div class="feature-content">
-                <h2>Lorem ipsum dolor sit amet. Et dolores praesentium</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <h2>Sustainability Through Smart Solutions</h2>
+                <p>Empowering communities with innovative solutions. At Gensys Cares, we are committed to creating opportunities, transforming lives, and building a future where technology and compassion come together for a better tomorrow. </p>
                 <a href="#" class="see-more-btn">SEE MORE</a>
             </div>
         </div>
     </section>
+
+    <section class="feature-section2">
+    <div class="feature-container2">
+        <div class="feature-content2">
+            <h2>Educate, Elevate, Empower</h2>
+            <p>Education is the foundation of progress. Gensys Cares supports digital learning, scholarships, and technology-driven education to equip individuals with the skills they need to thrive in a rapidly evolving world.</p>
+            <a href="#" class="see-more-btn2">SEE MORE</a>
+        </div>
+        <div class="feature-image2">
+            <img src="images/homepage pics/hp4.png" alt="Feature Image">
+        </div>
+    </div>
+</section>
+
 </div>
+
+
 
 <link rel="stylesheet" href="/assets/css/footerstyle.css">
 <?= view('layout/footer') ?>

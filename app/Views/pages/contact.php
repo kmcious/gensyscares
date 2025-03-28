@@ -1,5 +1,5 @@
 <?= view('layout/header', ['title' => 'Contact']) ?>
-
+<link rel="icon" type="image/png" href="<?= base_url('/images/logo/logo1.png'); ?>">
 <link rel="stylesheet" href="<?= base_url('assets/css/contact.css'); ?>">
 
 <!-- Loader -->

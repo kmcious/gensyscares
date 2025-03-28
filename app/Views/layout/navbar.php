@@ -1,5 +1,6 @@
 <!-- Navbar -->
 <!-- Bootstrap CSS -->
+<link rel="icon" type="image/png" href="<?= base_url('/images/logo/logo1.png'); ?>">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="<?= base_url('assets/css/homestyle.css'); ?>">
