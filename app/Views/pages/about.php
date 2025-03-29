@@ -8,6 +8,19 @@
 
 <!-- Page Content -->
 <div id="content">
+     <!-- About Gensys Cares Section -->
+     <section class="about-section">
+        <div class="image-stack">
+            <img src="images/homepage pics/Gensys cares.png" alt="Gensys Cares">
+        </div>
+        <div class="about-text">
+            <h2>ABOUT GENSYS CARES</h2>
+            <p>Gensys Cares is dedicated to bridging the gap in technology and education by offering accessible IT solutions.
+               Our mission is to empower individuals and businesses by providing innovative, reliable, and efficient technology services.
+               We strive to make a meaningful impact on communities, ensuring that everyone has the opportunity to thrive in the digital age.</p>
+        </div>
+    </section>
+
     <section class="mission-section">
         <div class="image-stack">
             <img src="images/homepage pics/hp5.png" alt="Student">
@@ -36,31 +49,7 @@
 <?= view('layout/footer') ?>
 
 <!-- Modern Loader Styles -->
-<style>
-    /* Loader */
-    #loader {
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(to bottom, #FAF7E5 0%, #91B7D1 90%); 
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 9999;
-    }
 
-    .svg-loader {
-        width: 80px; /* Adjust the size as needed */
-        height: auto;
-    }
-
-    /* Initially Hide Content */
-    #content {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    }
-</style>
 
 <!-- JavaScript for Smooth Transition -->
 <script>
