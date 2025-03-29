@@ -688,7 +688,75 @@
 
 
 
+/* SOCIAL WALL STYLES */
+.social-wall {
+    background: linear-gradient(to bottom, #91B7D1 0%, #FAF7E5 100%);
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.social-container {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+grid-auto-rows: auto;
+gap: 15px;
+max-width: 1200px;
+width: 100%;
+padding: 20px;
+}
 
+.social-post {
+background: rgba(255, 255, 255, 0.9);
+border-radius: 10px;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+overflow: hidden;
+display: flex;
+flex-direction: column;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-post:hover {
+transform: scale(1.05);
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Randomized post sizes for better fit */
+.social-post:nth-child(odd) { grid-row-end: span 18; }
+.social-post:nth-child(even) { grid-row-end: span 14; }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+.social-container {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+.social-post:nth-child(odd),
+.social-post:nth-child(even) {
+    grid-row-end: span 12;
+}
+}
+
+.social-post-content {
+    padding: 10px;
+}
+.social-post h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: bold;
+}
+.social-post p {
+    margin: 5px 0 0;
+    font-size: 0.9rem;
+}
+.social-wall-header {
+text-align: center;
+font-size: 2rem;
+font-weight: bold;
+color: #003366;
+text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.3);
+margin-bottom: 20px;
+}
 
 
 

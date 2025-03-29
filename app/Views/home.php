@@ -117,6 +117,64 @@
     </div>
 </section>
 
+
+<section class="social-wall">
+    <h2 class="social-wall-header">Gensys Cares Community Hub</h2>
+    <div class="social-container">
+        <div class="social-post">
+            <div class="social-post-content">
+                <h3>@SirMarkTheMentor</h3>
+                <p>Empowering young minds through digital learning! Every student deserves access to quality education. 💡✨ #GensysCares #EducationForAll #FutureLeaders</p>
+            </div>
+        </div>
+        <div class="social-post">
+            <div class="social-post-content">
+                <h3>@MaestraMia</h3>
+                <p>Education is the key to progress. Let's continue supporting students with the right resources! 📚📲 #GensysCares #SupportEducation #EveryChildCounts</p>
+            </div>
+        </div>
+        <div class="social-post">
+            <div class="social-post-content">
+                <h3>@FutureEngrDelaCruz</h3>
+                <p>STEM education opens doors to endless possibilities. Thanks to #GensysCares for advocating for young innovators! 🔬🚀 #FutureEngineers #EmpowerThroughEducation</p>
+            </div>
+        </div>
+        <div class="social-post">
+            <div class="social-post-content">
+                <h3>@BookwormBianca</h3>
+                <p>Reading changes lives! Encouraging every student to pick up a book and dream big. 📚💡 #GensysCares #LiteracyMatters #ReadToSucceed</p>
+            </div>
+        </div>
+        <div class="social-post">
+            <div class="social-post-content">
+                <h3>@MaxTheGreat25</h3>
+                <p>Remembering our heroes who valued education. Let’s continue their legacy by making learning accessible to all. 📖✨ #GensysCares #EducationIsPower</p>
+            </div>
+        </div>
+        <div class="social-post">
+            <div class="social-post-content">
+                <h3>@ScholarPedro</h3>
+                <p>Just finished a marathon! Feeling accomplished. 🏃‍♂️🏅</p>
+            </div>
+        </div>
+        <div class="social-post">
+            <div class="social-post-content">
+                <h3>@MikeJohnson</h3>
+                <p>Technology-driven education is the future! Excited to see more students gain access to digital tools. 🚀📖 #GensysCares #EdTech #DigitalLearning</p>
+            </div>
+        </div>
+        <div class="social-post">
+            <div class="social-post-content">
+                <h3>@Selimeduba5656</h3>
+                <p>Bringing digital education to remote areas! Every child deserves a chance to learn, no matter where they are. 🏝️📱 #GensysCares #BridgingTheGap #EqualEducation</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
 </div>
 
 
