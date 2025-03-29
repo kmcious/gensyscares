@@ -170,6 +170,57 @@
     </div>
 </section>
 
+<section class="faq-section">
+    <br><br><br><br><br><br><br><br>
+    <h2>Frequently Asked Questions</h2>
+    
+    <div class="faq">
+        <button class="faq-question">
+            What services does Gensys Cares offer?
+            <span class="icon">▼</span>
+        </button>
+        <div class="faq-answer">We provide IT solutions, web development, and consulting services tailored to businesses and individuals.</div>
+    </div>
+
+    <div class="faq">
+        <button class="faq-question">
+            How can I get support?
+            <span class="icon">▼</span>
+        </button>
+        <div class="faq-answer">You can reach us through our contact form or email support@gensyscares.com.</div>
+    </div>
+
+    <div class="faq">
+        <button class="faq-question">
+            Is Gensys Cares available globally?
+            <span class="icon">▼</span>
+        </button>
+        <div class="faq-answer">Yes! We offer remote and on-site services depending on your location.</div>
+    </div>
+    
+    <br><br><br><br><br><br>
+</section>
+
+<script>
+document.querySelectorAll('.faq-question').forEach(button => {
+    button.addEventListener('click', () => {
+        const answer = button.nextElementSibling;
+
+        // Close all other answers before opening the clicked one
+        document.querySelectorAll('.faq-answer').forEach(ans => {
+            if (ans !== answer) {
+                ans.classList.remove('show');
+            }
+        });
+
+        // Toggle the clicked answer
+        answer.classList.toggle('show');
+    });
+});
+
+
+
+</script>
 
 
 
