@@ -51,9 +51,10 @@ $segment = $request->getUri()->getSegment(1);
             <div class="modal-body d-flex p-0">
                 <!-- Left Side: Login Form -->
                 <div class="login-form">
-                    <div class="text-center mb-3">
-                        <img src="<?= base_url('images/logo/logo1.png'); ?>" alt="Logo" class="logo">
+                    <div class="logo">
+                        <img src="<?= base_url('images/logos/logo.png'); ?>" alt="Logo" class="logo">
                     </div>
+                    <h2 class="text-center mb-4">Login</h2> <!-- Added Login Title -->
                     <form action="<?= base_url('auth/login'); ?>" method="POST">
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
@@ -63,35 +64,35 @@ $segment = $request->getUri()->getSegment(1);
                             <label for="password" class="form-label">Password</label>
                             <input type="password" name="password" id="password" class="form-control input-style" placeholder="Type here your password..." required>
                         </div>
+                        
+                        <!-- Remember Me and Forgot Password -->
                         <div class="d-flex justify-content-between align-items-center mb-3">
-                            <div>
-                                <input type="checkbox" id="rememberMe">
-                                <label for="rememberMe">Remember Me</label>
+                            <div class="form-check">
+                                <input type="checkbox" id="rememberMe" class="form-check-input">
+                                <label for="rememberMe" class="form-check-label">Remember Me</label>
                             </div>
-                            <a href="#" class="forgot-link">Forgot Password?</a>
                         </div>
+                        
                         <div class="d-grid">
                             <button type="submit" class="btn login-btn">Login</button>
-                        </div>'
+                        </div>
                         <p class="text-center mt-3">Don't have an account? <a href="#" data-bs-toggle="modal" data-bs-target="#registerModal" data-bs-dismiss="modal">Register</a></p>
                         <p class="text-center mt-3"><a href="#">Terms of Service</a></p>
                     </form>
                 </div>
-             
-                
-
 
                 <!-- Right Side: Social Login -->
                 <div class="social-login">
                     <p class="text-light text-center mb-3">or Login with</p>
-                    <button class="btn social-btn google"><img src="<?= base_url('images/icons/google.png'); ?>" alt=""> Google</button>
-                    <button class="btn social-btn facebook"><img src="<?= base_url('images/icons/facebook.png'); ?>" alt=""> Facebook</button>
-                    <button class="btn social-btn microsoft"><img src="<?= base_url('images/icons/microsoft.png'); ?>" alt=""> Microsoft</button>
+                    <button class="btn social-btn google"><img src="<?= base_url('images/logo/google.png'); ?>" alt=""> Google</button>
+                    <button class="btn social-btn facebook"><img src="<?= base_url('images/logo/fb.svg'); ?>" alt=""> Facebook</button>
+                    <button class="btn social-btn microsoft"><img src="<?= base_url('images/logo/microsoft.png'); ?>" alt=""> Microsoft</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 <script>
     document.addEventListener("DOMContentLoaded", function () {
     document.querySelector("#loginModal form").addEventListener("submit", function (event) {

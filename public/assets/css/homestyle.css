@@ -92,21 +92,20 @@
     border-radius: 10px;
     overflow: hidden;
     border: none;
+    display: flex;
 }
 
 /* Left Side - Login Form */
 .login-form {
     width: 50%;
-    background: #91B7D1; /* Light blue-gray */
+    background: linear-gradient(to bottom, #91B7D1 10%, #FAF7E5 100%); 
     padding: 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center; /* Center content */
 }
 
-.logo {
-    width: 80px;
-}
 
 /* Input Fields */
 .input-style {
@@ -115,6 +114,8 @@
     padding: 12px;
     font-size: 16px;
     background: #FDF3BC; /* Light yellow */
+    width: 100%; /* Full width */
+    margin-bottom: 20px; /* Space between input fields */
 }
 
 /* Login Button */
@@ -125,6 +126,7 @@
     border-radius: 5px;
     font-size: 18px;
     transition: background 0.3s;
+    width: 100%; /* Make button the full width */
 }
 .login-btn:hover {
     background-color: #333;
@@ -135,16 +137,16 @@
     color: #004080;
     text-decoration: none;
     font-size: 14px;
+    margin-top: 10px; /* Space between button and link */
 }
 .forgot-link:hover {
     text-decoration: underline;
 }
 
 /* Right Side - Social Login */
-/* Right Side - Social Login */
 .social-login {
     width: 50%;
-    background: #004080; /* Dark blue */
+    background: linear-gradient(to bottom, #91B7D1 10%, #FAF7E5 100%); 
     color: white;
     text-align: center;
     padding: 40px;
@@ -153,6 +155,7 @@
     justify-content: center;
     align-items: center; /* Centers horizontally */
 }
+
 
 /* Social Buttons */
 .social-btn {
@@ -169,6 +172,8 @@
     justify-content: center; /* Centers text inside button */
     text-align: center;
 }
+
+/* Social Button Icon */
 .social-btn img {
     width: 20px;
     margin-right: 10px;
@@ -185,14 +190,14 @@
     color: #0078d4;
 }
 
-
-/* register style */
+/* Register style */
 
 /* Modal Customization */
-
 .logo2 {
     width: 80px;
+    margin-bottom: 20px; /* Space between logo and form */
 }
+
 .register-form {
     width: 100%;
     background: #91B7D1; /* Light blue-gray */
@@ -200,7 +205,9 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center; /* Center content */
 }
+
 .register-btn {
     background-color: black;
     color: white;
@@ -208,10 +215,14 @@
     border-radius: 5px;
     font-size: 18px;
     transition: background 0.3s;
+    width: 100%; /* Make button the full width */
 }
 .register-btn:hover {
     background-color: #333;
 }
+
+
+
 
 .navbar-nav .nav-link {
     color: #00254D; /* Default color */
@@ -232,7 +243,7 @@
 /* HOMEPAGE SECTION STYLES */
 
 .gensys-section {
-    background: linear-gradient(to bottom, #91B7D1 50%, #FAF7E5 100%); 
+    background: linear-gradient(to bottom, #91B7D1 10%, #FAF7E5 100%); 
     padding: 100px 0; 
 }
 
