@@ -690,7 +690,7 @@
 
 /* SOCIAL WALL STYLES */
 .social-wall {
-    background: linear-gradient(to bottom, #91B7D1 0%, #FAF7E5 100%);
+    background: linear-gradient(to bottom, #91B7D1 10%, #FAF7E5 100%);
     padding: 40px 20px;
     display: flex;
     flex-direction: column;
@@ -771,7 +771,7 @@ h2 {
     padding-bottom: 10px;
 }
 .faq-section {
-    background: linear-gradient(to bottom, #FAF7E5 50%, #91B7D1 100%);
+    background: linear-gradient(to bottom, #FAF7E5 20%, #91B7D1 100%);
     padding: 50px 20px;
     text-align: center;
 }
