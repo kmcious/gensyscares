@@ -97,7 +97,6 @@
                                             <h5 class="card-title fw-bold text-justify mb-2"><?= esc($announcement['title']); ?></h5>
                                             <p class="card-text text-justify mb-2"><strong>📅 When:</strong> <?= date('F d, Y', strtotime($announcement['event_date'])); ?></p>
                                             <p class="card-text text-justify mb-2"><strong>📍 Where:</strong> <?= esc($announcement['location']); ?></p>
-                                            <p class="card-text text-muted small mb-0">🕒 Posted on: <?= date('F d, Y - h:i A', strtotime($announcement['created_at'])); ?></p>
                                         </div>
                                     </div>
                                 </div>
