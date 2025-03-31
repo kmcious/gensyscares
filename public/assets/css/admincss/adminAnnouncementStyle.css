@@ -1,0 +1,163 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: linear-gradient(to bottom, #FAF7E5 0%, #91B7D1 90%); 
+    font-family: 'Poppins', sans-serif !important;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+
+/* General section styling */
+.section1 {
+    position: relative;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+/* Heading Styling */
+.section1 h2 {
+    margin-bottom: 15px;
+}
+
+/* Button Styling */
+#btnModal {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    background-color: #155E95;
+    color: white;
+}
+
+#btnModal:hover {
+    background-color: #0d6efd;
+    cursor: pointer;
+}
+
+#btnModal img {
+    width: 20px;
+    height: auto;
+}
+
+/* Table Container */
+#tableContainer {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    
+}
+
+/* Table Styling */
+.table {
+    background-color: white;
+    width: 90%;
+}
+
+.table thead {
+    background-color: #343a40;
+    color: white;
+    padding: 100px;
+}
+
+.table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Image Styling */
+.img-thumbnail {
+    object-fit: cover;
+    border: 2px solid #ddd;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #btnModal {
+        position: relative;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    #tableContainer {
+        margin-top: 10px;
+    }
+}
+
+
+
+/* Modal Styling */
+/* Modal Custom Styling */
+/* Modal Styling */
+.modal-content {
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Modal Header */
+.modal-header {
+    background-color: #007bff;
+    color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+/* Modal Title */
+.modal-title {
+    font-weight: bold;
+}
+
+/* Close Button */
+.btn-close {
+    background: white;
+    opacity: 0.8;
+}
+
+.btn-close:hover {
+    opacity: 1;
+}
+
+/* Input Fields */
+.form-control {
+    border-radius: 5px;
+}
+
+/* Image Preview */
+#previewImage {
+    max-width: 100px;
+    height: auto;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+/* Hide Image Preview Initially */
+.d-none {
+    display: none !important;
+}
+
+/* Hide Modal Initially */
+#announcementModal {
+    display: none;
+}
+
+/* Submit Button */
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+}

@@ -11,7 +11,7 @@ class UsersSeeder extends Seeder
         $data = [
             [
                 'name'      => 'Admin User',
-                'email'     => 'admin@example.com',
+                'email'     => 'admin@gmail.com',
                 'password'  => password_hash('admin123', PASSWORD_BCRYPT), // Hashing password
                 'role'      => 'admin',
                 'created_at' => date('Y-m-d H:i:s'),
@@ -19,7 +19,7 @@ class UsersSeeder extends Seeder
             ],
             [
                 'name'      => 'Regular User',
-                'email'     => 'user@example.com',
+                'email'     => 'user@gmail.com',
                 'password'  => password_hash('user123', PASSWORD_BCRYPT),
                 'role'      => 'user',
                 'created_at' => date('Y-m-d H:i:s'),

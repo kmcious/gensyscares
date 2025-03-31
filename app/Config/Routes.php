@@ -19,8 +19,8 @@ $routes->post('auth/login', 'Auth::login');
 
 
 //dashboard routes if user or admin
-$routes->get('/admin/dashboard', 'DashboardController::adminDashboard');
-$routes->get('/user/dashboard', 'DashboardController::userDashboard');
+$routes->get('/adminSide/dashboard', 'DashboardController::adminDashboard');
+$routes->get('/userSide/dashboard', 'DashboardController::userDashboard');
 
 //logout
 $routes->get('/auth/logout', 'Auth::logout');
@@ -29,3 +29,9 @@ $routes->get('/auth/logout', 'Auth::logout');
 //announcement routes display
 $routes->get('/pages/announcements', 'AnnouncementController::index');
 
+//admin announcement routes
+$routes->get('admin/announcements', 'AdminAnnouncement::index');
+$routes->post('admin/announcements/store', 'AdminAnnouncement::store');
+
+
+$routes->get('admin/announcements/delete/(:num)', 'AdminAnnouncement::delete/$1');
