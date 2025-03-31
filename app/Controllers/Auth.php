@@ -83,7 +83,7 @@ class Auth extends Controller
             ]);
     
             // Determine redirect URL
-            $redirectUrl = ($user['role'] === 'admin') ? base_url('admin/dashboard') : base_url('user/dashboard');
+            $redirectUrl = ($user['role'] === 'admin') ? base_url('adminSide/dashboard') : base_url('userSide/dashboard');
     
             return $this->response->setJSON([
                 'status'  => 'success',
