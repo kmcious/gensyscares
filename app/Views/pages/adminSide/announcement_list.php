@@ -9,27 +9,35 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="<?= base_url('assets/css/admincss/adminAnnouncementStyle.css') ?>">
 </head>
 
 <body>
+    <div class="sidebar">
+        <img src="<?= base_url('images/logo/logo1.png'); ?>" alt="Logo">
+        <h2>Admin</h2>
+        <a href="http://localhost:8080/adminSide/dashboard#" class="active"><i class="fas fa-tachometer-alt"></i> DASHBOARD</a>
+        <a href="/admin/announcements"><i class="fas fa-bullhorn"></i> Announcements</a>
+        <a href="/admin/users"><i class="fas fa-users"></i> MANAGE USERS</a>
+        <a href="<?= base_url('auth/logout'); ?>" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </div>
 
-    <section class="section1">
-        <h2>Announcements</h2>
+    <section class="content">
+        <div class="topbar">Admin Announcements</div>
         <button class="btn btn-primary" id="btnModal" data-bs-toggle="modal" data-bs-target="#announcementModal" onclick="openModal()">
-            <img src="<?= base_url('images/adminAnnouncement/square-plus.png') ?>" /> Add New Announcement
+            <i class="fas fa-plus-circle"></i> Add Announcement
         </button>
 
         <?php if (session()->has('success')): ?>
-            <div class="alert alert-success"><?= session('success') ?></div>
+            <div class="alert alert-success mt-3"> <?= session('success') ?> </div>
         <?php endif; ?>
         <?php if (session()->has('error')): ?>
-            <div class="alert alert-danger"><?= session('error') ?></div>
+            <div class="alert alert-danger mt-3"> <?= session('error') ?> </div>
         <?php endif; ?>
 
-        <div class="container-fluid" id="tableContainer">
-            <table class="table table-bordered mt-3">
+        <div class="table-responsive">
+            <table class="table table-striped align-middle text-center">
                 <thead class="table-dark">
                     <tr>
                         <th>Title</th>
@@ -42,17 +50,22 @@
                 <tbody>
                     <?php foreach ($announcements as $announcement): ?>
                         <tr>
-                            <td><?= esc($announcement['title']) ?></td>
-                            <td><?= esc($announcement['event_date']) ?></td>
-                            <td><?= esc($announcement['location']) ?></td>
-                            <td><img src="<?= base_url($announcement['image_path']) ?>" width="100" height="100" class="img-thumbnail"></td>
+                            <td class="fw-semibold"> <?= esc($announcement['title']) ?> </td>
+                            <td> <?= esc($announcement['event_date']) ?> </td>
+                            <td> <?= esc($announcement['location']) ?> </td>
                             <td>
-                                <button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#announcementModal"
+                                <img src="<?= base_url($announcement['image_path']) ?>" class="img-thumbnail" style="width: 80px; height: 80px; object-fit: cover; border-radius: 10px;">
+                            </td>
+                            <td>
+                                <button class="btn btn-warning btn-sm me-2" data-bs-toggle="modal" 
+                                    data-bs-target="#announcementModal"
                                     onclick="openModal(<?= $announcement['id'] ?>, '<?= esc($announcement['title']) ?>', '<?= esc($announcement['event_date']) ?>', '<?= esc($announcement['location']) ?>', '<?= esc($announcement['image_path']) ?>')">
-                                    Edit
+                                    <i class="fas fa-edit"></i>
                                 </button>
-                                <a href="<?= site_url('admin/announcements/delete/' . $announcement['id']) ?>" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">
-                                    Delete
+                                <a href="<?= site_url('admin/announcements/delete/' . $announcement['id']) ?>" 
+                                    class="btn btn-danger btn-sm" 
+                                    onclick="return confirm('Are you sure?')">
+                                    <i class="fas fa-trash"></i>
                                 </a>
                             </td>
                         </tr>
@@ -62,7 +75,6 @@
         </div>
     </section>
 
-    <!-- Add/Edit Announcement Modal -->
     <div class="modal fade" id="announcementModal" tabindex="-1" aria-labelledby="announcementModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -73,8 +85,7 @@
                 <div class="modal-body">
                     <form action="<?= base_url('admin/announcements/store') ?>" method="post" enctype="multipart/form-data">
                         <?= csrf_field() ?>
-                        <input type="hidden" id="announcement_id" name="id"> <!-- Hidden ID for editing -->
-
+                        <input type="hidden" id="announcement_id" name="id">
                         <div class="mb-3">
                             <label for="title" class="form-label">Title</label>
                             <input type="text" class="form-control" id="title" name="title" required>
@@ -90,11 +101,10 @@
                         <div class="mb-3">
                             <label for="image" class="form-label">Upload Image</label>
                             <input type="file" class="form-control" id="image" name="image">
-                            <input type="hidden" id="existing_image" name="existing_image">
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary">Save Announcement</button>
+                            <button type="submit" class="btn btn-primary">Save</button>
                         </div>
                     </form>
                 </div>
@@ -108,15 +118,60 @@
             document.getElementById('title').value = title;
             document.getElementById('event_date').value = event_date;
             document.getElementById('location').value = location;
-            document.getElementById('existing_image').value = image_path;
-
-            if (id) {
-                document.getElementById('announcementModalLabel').innerText = "Edit Announcement";
-            } else {
-                document.getElementById('announcementModalLabel').innerText = "Add New Announcement";
-            }
         }
     </script>
 
+    <style>
+       body {
+            background-color: #fef8ef;
+            overflow-x: hidden;
+        }
+        .sidebar {
+            background-color: #89a8bd;
+            width: 250px;
+            height: 100vh;
+            position: fixed;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .sidebar img {
+            width: 80px;
+            margin-bottom: 10px;
+        }
+        .sidebar h2 {
+            color: white;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .sidebar a {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            padding: 10px;
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            border-radius: 5px;
+        }
+        .sidebar a i {
+            margin-right: 10px;
+        }
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+            width: calc(100% - 250px);
+        }
+        .topbar {
+            background-color: #89a8bd;
+            padding: 15px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+    </style>
 </body>
 </html>
