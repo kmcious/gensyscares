@@ -47,15 +47,14 @@ $segment = $request->getUri()->getSegment(1);
 <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
-            
             <div class="modal-body d-flex p-0">
                 <!-- Left Side: Login Form -->
                 <div class="login-form">
                     <div class="logo">
                         <img src="<?= base_url('images/logos/logo.png'); ?>" alt="Logo" class="logo">
                     </div>
-                    <h2 class="text-center mb-4">Login</h2> <!-- Added Login Title -->
-                    <form action="<?= base_url('auth/login'); ?>" method="POST">
+                    <h2 class="text-center mb-4">Login</h2> 
+                    <form id="loginForm" action="<?= base_url('auth/login'); ?>" method="POST">
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
                             <input type="email" name="email" id="email" class="form-control input-style" placeholder="Type here your email..." required>
@@ -64,15 +63,19 @@ $segment = $request->getUri()->getSegment(1);
                             <label for="password" class="form-label">Password</label>
                             <input type="password" name="password" id="password" class="form-control input-style" placeholder="Type here your password..." required>
                         </div>
-                        
-                        <!-- Remember Me and Forgot Password -->
+
+                        <!-- reCAPTCHA -->
+                        <div class="mb-3 d-flex justify-content-center">
+                            <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div>
+                        </div>
+
                         <div class="d-flex justify-content-between align-items-center mb-3">
                             <div class="form-check">
                                 <input type="checkbox" id="rememberMe" class="form-check-input">
                                 <label for="rememberMe" class="form-check-label">Remember Me</label>
                             </div>
                         </div>
-                        
+
                         <div class="d-grid">
                             <button type="submit" class="btn login-btn">Login</button>
                         </div>
@@ -92,8 +95,11 @@ $segment = $request->getUri()->getSegment(1);
         </div>
     </div>
 </div>
+<!-- Include Google reCAPTCHA -->
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 <script>
+        
     document.addEventListener("DOMContentLoaded", function () {
     document.querySelector("#loginModal form").addEventListener("submit", function (event) {
         event.preventDefault();
