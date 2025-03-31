@@ -66,7 +66,7 @@ $segment = $request->getUri()->getSegment(1);
 
                         <!-- reCAPTCHA -->
                         <div class="mb-3 d-flex justify-content-center">
-                            <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div>
+                            <div class="g-recaptcha" data-sitekey="6Ld5OQUrAAAAAPS5b5fKIPh_fxw4XfNFk-7GURC-"></div>
                         </div>
 
                         <div class="d-flex justify-content-between align-items-center mb-3">
@@ -99,12 +99,21 @@ $segment = $request->getUri()->getSegment(1);
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 <script>
-        
-    document.addEventListener("DOMContentLoaded", function () {
-    document.querySelector("#loginModal form").addEventListener("submit", function (event) {
+document.addEventListener("DOMContentLoaded", function () {
+    let loginForm = document.querySelector("#loginForm");
+
+    loginForm.addEventListener("submit", function (event) {
         event.preventDefault();
 
+        let recaptchaResponse = grecaptcha.getResponse(); // Get reCAPTCHA response
+
+        if (!recaptchaResponse) {
+            alert("Please verify the reCAPTCHA before logging in.");
+            return;
+        }
+
         let formData = new FormData(this);
+        formData.append("g-recaptcha-response", recaptchaResponse);
 
         fetch("<?= base_url('auth/login'); ?>", {
             method: "POST",
@@ -117,12 +126,16 @@ $segment = $request->getUri()->getSegment(1);
                 window.location.href = data.redirect;
             } else {
                 alert("Error: " + data.message);
+                grecaptcha.reset(); // Reset reCAPTCHA if login fails
             }
         })
-        .catch(error => console.error("Fetch Error:", error));
+        .catch(error => {
+            console.error("Fetch Error:", error);
+        });
     });
 });
 </script>
+
 
 
 
