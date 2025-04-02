@@ -169,6 +169,10 @@ document.addEventListener("DOMContentLoaded", function () {
                             <label for="confirmPassword" class="form-label">Confirm Password</label>
                             <input type="password" name="confirm_password" id="confirmPassword" class="form-control" required>
                         </div>
+                         <!-- reCAPTCHA -->
+                         <div class="mb-3 d-flex justify-content-center">
+                            <div class="g-recaptcha" data-sitekey="6Ld4OQUrAAAAAFy5ZxigZ4K0fn1w0m9qlFbb2Ae5"></div>
+                        </div>
                         <div class="d-grid">
                             <button type="submit" class="btn btn-primary">Register</button>
                         </div>
@@ -182,13 +186,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-    document.querySelector("#registerForm").addEventListener("submit", function (event) {
+    let registerForm = document.querySelector("#registerForm");
+
+    registerForm.addEventListener("submit", function (event) {
         event.preventDefault(); // Prevent default form submission
 
+        let recaptchaResponse = grecaptcha.getResponse(); // Get reCAPTCHA response
+
         let formData = new FormData(this);
+        formData.append("g-recaptcha-response", recaptchaResponse); // Append reCAPTCHA response to form data
 
-        console.log("Submitting form..."); // Debugging
+        console.log("Submitting registration form..."); // Debugging log to check
 
+        // Send AJAX request to submit the form
         fetch(this.action, {
             method: "POST",
             headers: {
@@ -198,19 +208,26 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .then(response => response.json()) // Expect JSON response
         .then(data => {
-            console.log("Response:", data);
+            console.log(data); // Log the full response to inspect its structure
             if (data.status === "success") {
                 alert("Registration successful!");
-                window.location.reload();
+                window.location.reload(); // Reload the page after successful registration
             } else {
-                alert("Error: " + JSON.stringify(data.message)); // Convert object to string
+                // Check if data.message is an object or string
+                let errorMessage = typeof data.message === "object" ? JSON.stringify(data.message) : data.message;
+                alert("Error: " + errorMessage); // Show error message
+                grecaptcha.reset(); // Reset reCAPTCHA if registration fails
             }
         })
-        .catch(error => console.error("Fetch Error:", error));
+        .catch(error => {
+            console.error("Fetch Error:", error); // Log any errors that occur during fetch
+            alert("An error occurred while submitting the form. Please try again.");
+        });
     });
 });
 
 </script>
+
 
         <!-- Mobile Menu Button -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
