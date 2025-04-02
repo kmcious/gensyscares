@@ -32,6 +32,16 @@ $routes->get('/pages/announcements', 'AnnouncementController::index');
 //admin announcement routes
 $routes->get('admin/announcements', 'AdminAnnouncement::index');
 $routes->post('admin/announcements/store', 'AdminAnnouncement::store');
-
-
 $routes->get('admin/announcements/delete/(:num)', 'AdminAnnouncement::delete/$1');
+
+//admin user management routes
+$routes->get('/admin/users', 'AdminUser::index');
+$routes->post('/admin_user/updateRole', 'AdminUser::updateRole');
+$routes->get('/admin_user/deleteUser/(:num)', 'AdminUser::deleteUser/$1');
+$routes->post('/admin_user/addUser', 'AdminUser::addUser');
+
+//social media routes
+
+$routes->get('/social', 'SocialController::index');
+$routes->post('/social/create', 'SocialController::create');
+
