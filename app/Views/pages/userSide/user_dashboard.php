@@ -93,6 +93,17 @@ if (!$session->get('logged_in')) {
             </div>
         </div>
     </section>
+    <section class="feature-section2">
+        <div class="feature-container2">
+            <div class="feature-content2">
+                <h2>Educate, Elevate, Empower</h2>
+                <p>Education is the foundation of progress. Gensys Cares supports digital learning, scholarships, and technology-driven education to equip individuals with the skills they need to thrive in a rapidly evolving world.</p>
+            </div>
+            <div class="feature-image2">
+            <img src="<?= base_url('images\homepage pics\hp4.png') ?>" alt="Feature Image">
+            </div>
+        </div>
+    </section>
 
     <section class="social-wall">
         <h2 class="social-wall-header">Gensys Cares Community Hub</h2>
@@ -112,6 +123,7 @@ if (!$session->get('logged_in')) {
             </div>
         </div>
     </section>
+    
 
     <script>
     function handleCreatePost() {

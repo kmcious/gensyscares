@@ -37,11 +37,54 @@ $segment = $request->getUri()->getSegment(1);
 
 
         <!-- Profile Icon -->
+<!-- Right Side: Profile/Logout -->
 <div class="user-icon">
-    <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal">
-        <img src="<?= base_url('images/logo/profile.png'); ?>" alt="User Login">
-    </a>
+    <?php if (session()->has('user_id')): ?>
+        <div class="dropdown">
+            <a href="#" class="dropdown-toggle d-flex align-items-center" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="<?= base_url('images/logo/profile.png'); ?>" alt="User" class="me-2">
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                <li class="dropdown-header fw-bold text-center"><?= session()->get('user_name'); ?></li> <!-- User's Name -->
+                <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#manageModal">Manage</a></li>
+                <li><a class="dropdown-item" href="<?= base_url('auth/logout') ?>">Logout</a></li>
+            </ul>
+        </div>
+    <?php else: ?>
+        <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal">
+            <img src="<?= base_url('images/logo/profile.png'); ?>" alt="User Login">
+        </a>
+    <?php endif; ?>
 </div>
+
+<!-- Manage Account Modal -->
+<div class="modal fade" id="manageModal" tabindex="-1" aria-labelledby="manageModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="manageModalLabel">Manage Account</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="<?= base_url('profile/update') ?>" method="POST">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" name="name" value="<?= session()->get('user_name'); ?>" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" value="<?= session()->get('user_email'); ?>" required>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <!-- Login Modal -->
 <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">

@@ -116,37 +116,21 @@
 
     <section class="social-wall">
         <h2 class="social-wall-header">Gensys Cares Community Hub</h2>
-        
+
         <!-- Improved Create Post Button -->
         <button class="create-post-btn" onclick="handleCreatePost()">
             <span class="plus-icon">╋</span> Create Post
         </button>
 
         <div class="social-container" id="socialContainer">
+            <!-- Example Posts -->
             <div class="social-post">
                 <div class="social-post-content">
                     <h3>@SirMarkTheMentor</h3>
                     <p>Empowering young minds through digital learning! Every student deserves access to quality education. 💡✨ #GensysCares #EducationForAll #FutureLeaders</p>
                 </div>
             </div>
-
-            <!-- Another Dummy Post -->
-            <div class="social-post">
-                <div class="social-post-content">
-                    <h3>@TechGuru</h3>
-                    <p>Innovation is the key to the future. Let's build solutions that transform industries and create positive change. 🔧🚀 #TechForGood #Innovate #FutureReady</p>
-                </div>
-            </div>
-
-            <div class="social-post">
-                <div class="social-post-content">
-                    <h3>@TechGuru</h3>
-                    <p>Innovation is the key to the future. Let's build solutions that transform industries and create positive change. 🔧🚀 #TechForGood #Innovate #FutureReady</p>
-                </div>
-            </div>
-            
         </div>
-        
     </section>
 
     <script>
