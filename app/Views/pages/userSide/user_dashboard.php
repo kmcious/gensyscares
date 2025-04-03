@@ -114,13 +114,15 @@ if (!$session->get('logged_in')) {
         </button>
 
         <div class="social-container" id="socialContainer">
-            <!-- Example Posts -->
-            <div class="social-post">
-                <div class="social-post-content">
-                    <h3>@SirMarkTheMentor</h3>
-                    <p>Empowering young minds through digital learning! Every student deserves access to quality education. 💡✨ #GensysCares #EducationForAll #FutureLeaders</p>
+            <?php foreach ($posts as $post): ?>
+                <div class="social-post">
+                    <div class="social-post-content">
+                        <h3>@<?= esc($post['user_name']); ?></h3>
+                        <p><?= esc($post['message']); ?></p>
+                        <small>Posted on: <?= esc(date('F j, Y, g:i a', strtotime($post['created_at']))); ?></small>
+                    </div>
                 </div>
-            </div>
+            <?php endforeach; ?>
         </div>
     </section>
     

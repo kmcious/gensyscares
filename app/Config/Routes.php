@@ -22,6 +22,9 @@ $routes->post('auth/login', 'Auth::login');
 $routes->get('/adminSide/dashboard', 'DashboardController::adminDashboard');
 $routes->get('/userSide/dashboard', 'DashboardController::userDashboard');
 
+//update profile
+$routes->post('/auth/updateProfile', 'Auth::updateProfile');
+
 //logout
 $routes->get('/auth/logout', 'Auth::logout');
 
@@ -44,4 +47,5 @@ $routes->post('/admin_user/addUser', 'AdminUser::addUser');
 
 $routes->get('/social', 'SocialController::index');
 $routes->post('/social/create', 'SocialController::create');
+
 

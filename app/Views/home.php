@@ -123,19 +123,21 @@
         </button>
 
         <div class="social-container" id="socialContainer">
-            <!-- Example Posts -->
-            <div class="social-post">
-                <div class="social-post-content">
-                    <h3>@SirMarkTheMentor</h3>
-                    <p>Empowering young minds through digital learning! Every student deserves access to quality education. 💡✨ #GensysCares #EducationForAll #FutureLeaders</p>
+            <?php foreach ($posts as $post): ?>
+                <div class="social-post">
+                    <div class="social-post-content">
+                        <h3>@<?= esc($post['user_name']); ?></h3>
+                        <p><?= esc($post['message']); ?></p>
+                        <small>Posted on: <?= esc(date('F j, Y, g:i a', strtotime($post['created_at']))); ?></small>
+                    </div>
                 </div>
-            </div>
+            <?php endforeach; ?>
         </div>
     </section>
 
     <script>
     function handleCreatePost() {
-        let isLoggedIn = <?= json_encode(isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in']); ?>;
+        let isLoggedIn = <?= json_encode(isset($_SESSION['logged_in']) && $_SESSION['logged_in']); ?>;
         
         if (!isLoggedIn) {
             let loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
