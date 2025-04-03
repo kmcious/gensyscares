@@ -25,10 +25,58 @@
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-12 text-center">
-                    <div class="gensys-image-container">
-                        <img src="images/homepage pics/hp1.png" alt="Gensys Team" class="gensys-image">
-                    </div>
-                </div>
+    <div class="gensys-image-container">
+        <img src="images/homepage pics/hp1.png" alt="Gensys Team" class="gensys-image" onclick="openFullScreen(this)">
+    </div>
+</div>
+
+<!-- Fullscreen Modal -->
+<div id="fullscreenModal" class="fullscreen-modal" onclick="closeFullScreen()">
+    <img id="fullscreenImage" class="fullscreen-image" src="" alt="Full-screen Image">
+</div>
+
+<!-- Add this CSS for the full-screen modal -->
+<style>
+    .fullscreen-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+
+    .fullscreen-image {
+        max-width: 90%;
+        max-height: 90%;
+        object-fit: contain;
+    }
+</style>
+
+<script>
+    function openFullScreen(img) {
+        var modal = document.getElementById("fullscreenModal");
+        var fullImage = document.getElementById("fullscreenImage");
+        
+        // Set the source of the full-screen image to the clicked image
+        fullImage.src = img.src;
+        
+        // Display the modal
+        modal.style.display = "flex";
+    }
+
+    function closeFullScreen() {
+        var modal = document.getElementById("fullscreenModal");
+        
+        // Hide the modal
+        modal.style.display = "none";
+    }
+</script>
+
             </div>
         </div>
     </section>
@@ -92,9 +140,57 @@
 
     <section class="feature-section">
         <div class="feature-container">
-            <div class="feature-image">
-                <img src="images/homepage pics/hp2.png" alt="Feature Image">
-            </div>
+        <div class="feature-image">
+    <img src="images/homepage pics/hp2.png" alt="Feature Image" onclick="openFullScreen(this)">
+</div>
+
+<!-- Fullscreen Modal -->
+<div id="fullscreenModal" class="fullscreen-modal" onclick="closeFullScreen()">
+    <img id="fullscreenImage" class="fullscreen-image" src="" alt="Full-screen Image">
+</div>
+
+<!-- Add this CSS for the full-screen modal -->
+<style>
+    .fullscreen-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+
+    .fullscreen-image {
+        max-width: 90%;
+        max-height: 90%;
+        object-fit: contain;
+    }
+</style>
+
+<script>
+    function openFullScreen(img) {
+        var modal = document.getElementById("fullscreenModal");
+        var fullImage = document.getElementById("fullscreenImage");
+        
+        // Set the source of the full-screen image to the clicked image
+        fullImage.src = img.src;
+        
+        // Display the modal
+        modal.style.display = "flex";
+    }
+
+    function closeFullScreen() {
+        var modal = document.getElementById("fullscreenModal");
+        
+        // Hide the modal
+        modal.style.display = "none";
+    }
+</script>
+
             <div class="feature-content">
                 <h2>Sustainability Through Smart Solutions</h2>
                 <p>Empowering communities with innovative solutions. At Gensys Cares, we are committed to creating opportunities, transforming lives, and building a future where technology and compassion come together for a better tomorrow. </p>
@@ -109,8 +205,56 @@
                 <p>Education is the foundation of progress. Gensys Cares supports digital learning, scholarships, and technology-driven education to equip individuals with the skills they need to thrive in a rapidly evolving world.</p>
             </div>
             <div class="feature-image2">
-                <img src="images/homepage pics/hp4.png" alt="Feature Image">
-            </div>
+    <img src="images/homepage pics/hp4.png" alt="Feature Image" onclick="openFullScreen(this)">
+</div>
+
+<!-- Fullscreen Modal -->
+<div id="fullscreenModal" class="fullscreen-modal" onclick="closeFullScreen()">
+    <img id="fullscreenImage" class="fullscreen-image" src="" alt="Full-screen Image">
+</div>
+
+<!-- Add this CSS for the full-screen modal -->
+<style>
+    .fullscreen-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+
+    .fullscreen-image {
+        max-width: 90%;
+        max-height: 90%;
+        object-fit: contain;
+    }
+</style>
+
+<script>
+    function openFullScreen(img) {
+        var modal = document.getElementById("fullscreenModal");
+        var fullImage = document.getElementById("fullscreenImage");
+        
+        // Set the source of the full-screen image to the clicked image
+        fullImage.src = img.src;
+        
+        // Display the modal
+        modal.style.display = "flex";
+    }
+
+    function closeFullScreen() {
+        var modal = document.getElementById("fullscreenModal");
+        
+        // Hide the modal
+        modal.style.display = "none";
+    }
+</script>
+
         </div>
     </section>
 
