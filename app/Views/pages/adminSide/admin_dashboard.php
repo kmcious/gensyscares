@@ -18,6 +18,7 @@
         body {
             background-color: #fef8ef;
             overflow-x: hidden;
+            font-family: 'Poppins', sans-serif !important;
         }
         .sidebar {
             background-color: #89a8bd;
@@ -72,10 +73,10 @@
         <img src="<?= base_url('images/logo/logo1.png'); ?>" alt="Logo">
         <h2>Admin</h2>
 
-        <a href="#" class="active"><i class="fas fa-tachometer-alt"></i> DASHBOARD</a>
-        <a href="/admin/announcements"><i class="fas fa-bullhorn"></i> ANNOUNCEMENT CREATE</a>
-         <a href="/admin/users"><i class="fas fa-users"></i> MANAGE USERS</a>
-        <a href="<?= base_url('auth/logout'); ?>"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        <a href="http://localhost:8080/adminSide/dashboard#" class="active"><i class="fas fa-tachometer-alt"></i> DASHBOARD</a>
+        <a href="/admin/announcements"><i class="fas fa-bullhorn"></i> CREATE ANNOUNCEMENT</a>
+        <a href="/admin/users"><i class="fas fa-users"></i> MANAGE USERS</a>
+        <a href="<?= base_url('auth/logout'); ?>"><i class="fas fa-sign-out-alt"></i> LOGOUT</a>
     </div>
     <div class="content">
         <div class="topbar">Dashboard</div>

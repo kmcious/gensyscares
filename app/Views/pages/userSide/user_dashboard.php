@@ -113,17 +113,68 @@ if (!$session->get('logged_in')) {
             <span class="plus-icon">╋</span> Create Post
         </button>
 
-        <div class="social-container" id="socialContainer">
-            <?php foreach ($posts as $post): ?>
-                <div class="social-post">
-                    <div class="social-post-content">
-                        <h3>@<?= esc($post['user_name']); ?></h3>
-                        <p><?= esc($post['message']); ?></p>
-                        <small>Posted on: <?= esc(date('F j, Y, g:i a', strtotime($post['created_at']))); ?></small>
-                    </div>
-                </div>
-            <?php endforeach; ?>
+        <?php date_default_timezone_set('Asia/Manila'); // Set timezone to Manila ?>
+<div class="social-container" id="socialContainer">
+    <?php foreach ($posts as $post): ?>
+        <div class="social-post">
+            <div class="social-post-header">
+                <h3 class="user-name">@<?= esc($post['user_name']); ?></h3>
+                <small class="post-date" 
+                       data-time="<?= esc($post['created_at']); ?>" 
+                       data-full-date="<?= esc(date('F j, Y, g:i a', strtotime($post['created_at']))); ?>">
+                    <?= esc(date('F j, Y, g:i a', strtotime($post['created_at']))); ?>
+                </small>
+            </div>
+            <div class="social-post-content">
+                <p><?= nl2br(esc($post['message'])); ?></p>
+            </div>
         </div>
+    <?php endforeach; ?>
+</div>
+
+<script>
+function updateTimestamps() {
+    document.querySelectorAll('.post-date').forEach(function(element) {
+        const postTime = new Date(element.getAttribute('data-time') + ' UTC'); // Get UTC time from the attribute
+        const now = new Date();
+        const diffInSeconds = Math.floor((now - postTime) / 1000);
+        const fullDate = element.getAttribute('data-full-date'); // Get full formatted date
+
+        // Convert to Manila time
+        const options = { 
+            timeZone: 'Asia/Manila', 
+            hour12: true, 
+            month: 'long', 
+            day: 'numeric', 
+            year: 'numeric', 
+            hour: 'numeric', 
+            minute: 'numeric' 
+        };
+        const manilaTime = postTime.toLocaleString('en-PH', options);
+
+        let timeAgoText = '';
+        if (diffInSeconds < 60) {
+            timeAgoText = 'Just now';
+        } else if (diffInSeconds < 3600) {
+            timeAgoText = Math.floor(diffInSeconds / 60) + ' minutes ago';
+        } else if (diffInSeconds < 86400) {
+            timeAgoText = Math.floor(diffInSeconds / 3600) + ' hours ago';
+        } else if (diffInSeconds < 172800) { 
+            timeAgoText = 'Yesterday';
+        } else {
+            timeAgoText = Math.floor(diffInSeconds / 86400) + ' days ago';
+        }
+
+        // Format it as "time ago (Full date in Manila time)"
+        element.innerText = `${timeAgoText} (${manilaTime})`;
+    });
+}
+
+// Update timestamps every 30 seconds
+setInterval(updateTimestamps, 30000);
+window.onload = updateTimestamps;
+</script>
+
     </section>
     
 

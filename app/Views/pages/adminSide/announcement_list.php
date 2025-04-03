@@ -18,9 +18,9 @@
         <img src="<?= base_url('images/logo/logo1.png'); ?>" alt="Logo">
         <h2>Admin</h2>
         <a href="http://localhost:8080/adminSide/dashboard#" class="active"><i class="fas fa-tachometer-alt"></i> DASHBOARD</a>
-        <a href="/admin/announcements"><i class="fas fa-bullhorn"></i> Announcements</a>
+        <a href="/admin/announcements"><i class="fas fa-bullhorn"></i> CREATE ANNOUNCEMENT</a>
         <a href="/admin/users"><i class="fas fa-users"></i> MANAGE USERS</a>
-        <a href="<?= base_url('auth/logout'); ?>" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        <a href="<?= base_url('auth/logout'); ?>"><i class="fas fa-sign-out-alt"></i> LOGOUT</a>
     </div>
 
     <section class="content">
