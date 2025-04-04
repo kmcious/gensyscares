@@ -2,9 +2,12 @@
 <link rel="icon" type="image/png" href="<?= base_url('/images/logo/logo1.png'); ?>">
 <link rel="stylesheet" href="<?= base_url('assets/css/contact.css'); ?>">
 
+<!-- Toast Notification -->
+
+
 <!-- Loader -->
 <div id="loader">
-<img src="<?= base_url('/images/logo/bouncing-circles.svg'); ?>" alt="Loading..." class="svg-loader">
+    <img src="<?= base_url('/images/logo/bouncing-circles.svg'); ?>" alt="Loading..." class="svg-loader">
 </div>
 
 <!-- Page Content -->
@@ -36,7 +39,7 @@
                             <span class="icon">✉️</span>
                             <input type="email" name="email" placeholder="Your Email" required>
                         </div>
-                        <textarea name="message" placeholder="Your Message"></textarea>
+                        <textarea name="message" placeholder="Your Message" required></textarea>
                         <button type="submit" class="send-button">Send Message</button>
                     </form>
                 </div>
@@ -48,14 +51,17 @@
 <link rel="stylesheet" href="/assets/css/footerstyle.css">
 <?= view('layout/footer') ?>
 
+<!-- Bootstrap CSS and JS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 <!-- Modern Loader Styles -->
 <style>
-    /* Loader */
     #loader {
         position: fixed;
         width: 100%;
         height: 100%;
-        background: linear-gradient(to bottom, #FAF7E5 0%, #91B7D1 90%); 
+        background: linear-gradient(to bottom, #FAF7E5 0%, #91B7D1 90%);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -63,11 +69,10 @@
     }
 
     .svg-loader {
-        width: 80px; /* Adjust the size as needed */
+        width: 80px;
         height: auto;
     }
 
-    /* Initially Hide Content */
     #content {
         opacity: 0;
         transform: translateY(20px);
@@ -75,14 +80,19 @@
     }
 </style>
 
-<!-- JavaScript for Smooth Transition -->
+<!-- JS for loader & toast -->
 <script>
-    window.addEventListener("load", function() {
+    window.addEventListener("load", function () {
         setTimeout(() => {
             document.getElementById("loader").style.display = "none";
             document.getElementById("content").style.opacity = "1";
             document.getElementById("content").style.transform = "translateY(0)";
-        }, 1200); // Loader stays for 1.2 seconds before disappearing
+        }, 1200);
+
+        const toastEl = document.getElementById('feedbackToast');
+        if (toastEl) {
+            const toast = new bootstrap.Toast(toastEl);
+            toast.show();
+        }
     });
 </script>
-

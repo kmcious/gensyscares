@@ -48,4 +48,5 @@ $routes->post('/admin_user/addUser', 'AdminUser::addUser');
 $routes->get('/social', 'SocialController::index');
 $routes->post('/social/create', 'SocialController::create');
 
-
+//contact form route
+$routes->post('/contact/submit', 'ContactController::submit');
