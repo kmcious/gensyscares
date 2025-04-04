@@ -6,34 +6,50 @@ use CodeIgniter\Controller;
 
 use App\Models\SocialPostModel;
 use App\Models\UserModel;
+use App\Models\AnnouncementModel;
 
 class DashboardController extends Controller
 {
-
     protected $socialPostModel;
     protected $userModel;
+    protected $announcementModel;
 
     public function __construct()
     {
         $this->socialPostModel = new SocialPostModel();
         $this->userModel = new UserModel();
+        $this->announcementModel = new AnnouncementModel(); // Model for announcements
     }
 
     public function adminDashboard()
     {
-        return view('pages/adminSide/admin_dashboard');
-    }
-
-    public function userDashboard()
-    {
-      // Get the posts from the database
-        $data['posts'] = $this->socialPostModel
-            ->join('usertable', 'social_posts.user_id = usertable.id')
-            ->select('social_posts.id, social_posts.message, usertable.name as user_name, social_posts.created_at')
-            ->orderBy('social_posts.created_at', 'DESC')
-            ->findAll();
-
+        // Get the total users
+        $totalUsers = $this->userModel->countAllResults();
+    
+        // Get the total announcements
+        $totalAnnouncements = $this->announcementModel->countAllResults();
+    
+        // Example data for graph: Monthly user registrations (replace with real data)
+        $monthlyUsers = $this->userModel->select("MONTH(created_at) as month, COUNT(id) as total_users")
+                                        ->groupBy("MONTH(created_at)")
+                                        ->orderBy("MONTH(created_at)", "ASC")
+                                        ->findAll();
+    
+        // Prepare labels and data for the chart
+        $labels = [];
+        $data = [];
+        foreach ($monthlyUsers as $user) {
+            $labels[] = date('F', mktime(0, 0, 0, $user['month'], 10));  // Get month name
+            $data[] = $user['total_users'];
+        }
+    
         // Pass the data to the view
-         return view('pages/userSide/user_dashboard', $data);
+        return view('pages/adminSide/admin_dashboard', [
+            'totalUsers' => $totalUsers,
+            'totalAnnouncements' => $totalAnnouncements,
+            'monthlyUserLabels' => json_encode($labels),
+            'monthlyUserData' => json_encode($data)
+        ]);
     }
+    
 }

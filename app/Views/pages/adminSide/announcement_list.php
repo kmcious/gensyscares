@@ -125,6 +125,7 @@
        body {
             background-color: #fef8ef;
             overflow-x: hidden;
+            font-family: 'Inter', sans-serif !important;
         }
         .sidebar {
             background-color: #89a8bd;

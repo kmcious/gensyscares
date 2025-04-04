@@ -14,7 +14,7 @@
         body {
             background-color: #fef8ef;
             overflow-x: hidden;
-            font-family: 'Poppins', sans-serif !important;
+            font-family: 'Inter', sans-serif !important;
         }
 
         .sidebar {
@@ -82,7 +82,7 @@
         }
 
         .table thead {
-            background: linear-gradient(to bottom, #91B7D1 10%, #FAF7E5 100%);
+            background: linear-gradient(to bottom, #91B7D1 100%, #FAF7E5 0%);
             color: white;
         }
 
