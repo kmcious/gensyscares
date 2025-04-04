@@ -50,8 +50,14 @@
 </style>
 
 <div class="search-bar">
-    <input type="text" placeholder="Search here...">
-    <button>SEARCH</button>
+    <form method="GET" action="">
+        <input type="text" name="search" placeholder="Search here..." value="<?= isset($_GET['search']) ? esc($_GET['search']) : ''; ?>">
+        <button type="submit">SEARCH</button>
+        <?php if (isset($_GET['search'])) : ?>
+            <!-- Clear Button -->
+            <a href="?" class="btn btn-danger">CLEAR</a>
+        <?php endif; ?>
+    </form>
 </div>
 
 <!-- Events Container -->
@@ -67,8 +73,20 @@
                 // Get current page from URL, default to page 1 if not provided
                 $currentPage = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 
-                // Get total number of announcements
-                $totalAnnouncements = count($announcements);  // Assuming $announcements is the array with all announcements
+                // Get search query from URL, if provided
+                $searchQuery = isset($_GET['search']) ? $_GET['search'] : '';
+
+                // Filter the announcements by search query
+                if ($searchQuery) {
+                    $filteredAnnouncements = array_filter($announcements, function($announcement) use ($searchQuery) {
+                        return stripos($announcement['title'], $searchQuery) !== false || stripos($announcement['location'], $searchQuery) !== false;
+                    });
+                } else {
+                    $filteredAnnouncements = $announcements;
+                }
+
+                // Get total number of filtered announcements
+                $totalAnnouncements = count($filteredAnnouncements);
 
                 // Calculate the total number of pages
                 $totalPages = ceil($totalAnnouncements / $perPage);
@@ -76,8 +94,8 @@
                 // Calculate the offset for the current page
                 $offset = ($currentPage - 1) * $perPage;
 
-                // Slice the announcements array to get the announcements for the current page
-                $pagedAnnouncements = array_slice($announcements, $offset, $perPage);
+                // Slice the filtered announcements array to get the announcements for the current page
+                $pagedAnnouncements = array_slice($filteredAnnouncements, $offset, $perPage);
                 ?>
 
                 <?php if (!empty($pagedAnnouncements)) : ?>
@@ -110,19 +128,19 @@
                             <ul class="pagination">
                                 <?php if ($currentPage > 1) : ?>
                                     <li class="page-item">
-                                        <a class="page-link" href="?page=<?= $currentPage - 1; ?>">⬅️ Previous</a>
+                                        <a class="page-link" href="?page=<?= $currentPage - 1; ?>&search=<?= esc($searchQuery); ?>">⬅️ Previous</a>
                                     </li>
                                 <?php endif; ?>
 
                                 <?php for ($i = 1; $i <= $totalPages; $i++) : ?>
                                     <li class="page-item <?= ($i == $currentPage) ? 'active' : ''; ?>">
-                                        <a class="page-link" href="?page=<?= $i; ?>"><?= $i; ?></a>
+                                        <a class="page-link" href="?page=<?= $i; ?>&search=<?= esc($searchQuery); ?>"><?= $i; ?></a>
                                     </li>
                                 <?php endfor; ?>
 
                                 <?php if ($currentPage < $totalPages) : ?>
                                     <li class="page-item">
-                                        <a class="page-link" href="?page=<?= $currentPage + 1; ?>">Next ➡️</a>
+                                        <a class="page-link" href="?page=<?= $currentPage + 1; ?>&search=<?= esc($searchQuery); ?>">Next ➡️</a>
                                     </li>
                                 <?php endif; ?>
                             </ul>
