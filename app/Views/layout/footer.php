@@ -15,7 +15,7 @@
 
         <!-- Centered Logo -->
         <div class="footer-logo">
-            <img src="<?= base_url('images\logo\logo1.png') ?>" alt="Company Logo">
+            <img src="<?= base_url('images\logo\logo1.png') ?>" alt="Company Log">
         </div>
     </div>
 </footer>
