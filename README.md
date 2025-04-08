@@ -13,6 +13,6 @@
 ##  Team Members
 
 - **Kurt Micheil Campos**
-- **Rhobie Parin**
+- **Rhobie Paring**
 
 ---
